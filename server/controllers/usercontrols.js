@@ -2,16 +2,31 @@ import Users from "../models/User.js";
 
 class UserControls {
     static addError = async (req, res) => {
+
         try {
-            const { name, error, solution } = req.body;
-            const user = new Users(req.body);
-            const result = await user.save();
-            res.status(201).json({ success: true, user: result });
-        } catch (error) {
-            console.log(error);
-            res.status(400).json({ success: false, message: error.message + "hello" });
-        }
+            const { Name, Error, Solution } = req.body;
+        
+            const newUser = new Users({
+              Name,
+              Error,
+              Solution,
+            });
+        
+            await newUser.save();
+        
+            res.status(201).json({ message: 'User added successfully' });
+          } catch (error) {
+            res.status(400).json({ message: 'Error adding user', error });
+          }
+        };
+        
+        
+        
+        
+        
+        
+        
     }
-}
+
 
 export default UserControls;

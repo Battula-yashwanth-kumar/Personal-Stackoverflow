@@ -13,7 +13,7 @@ const userSchema = new mongoose.Schema({
   Solution: {
     type: String,
     required: true,
-  },
+  }
 });
 
 export default mongoose.model("Users", userSchema);
