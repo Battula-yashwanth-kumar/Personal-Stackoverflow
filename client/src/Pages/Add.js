@@ -1,11 +1,13 @@
-import React, { useState } from 'react'
+import React from 'react'
+import api from '../api'
+
 import {Formik,Form} from 'formik';
 import * as Yup from 'yup';
 import FormikControl from '../form/FormikControl';
-import  axios from 'axios';
 import {useNavigate} from 'react-router-dom'
 
 const Add =()=>{
+  
     const navigate=useNavigate();
     
     const initialValues = {
@@ -27,13 +29,10 @@ const Add =()=>{
         };
       
         try {
-          const result = await axios.post('http://localhost:5000/addError', data, {
-            headers: {
-              'Content-Type': 'application/json',
-            },
-          });
+          await api.AddError(data).then(res=>{
+            window.alert('Error insert successfully');
+          })
       
-          console.log(result);
         } catch (error) {
           console.error(error);
         }

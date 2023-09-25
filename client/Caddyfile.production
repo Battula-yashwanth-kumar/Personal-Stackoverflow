@@ -1,0 +1,9 @@
+https://jvhaeiuhvtrbej.xyz:443 {
+    tls yashwathsaikumar@gmail.com
+    root * /srv
+    route {
+        reverse_proxy /api* server:5000
+        try_files {path} {path}/ /index.html
+        file_server
+    }
+}

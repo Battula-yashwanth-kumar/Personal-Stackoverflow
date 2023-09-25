@@ -1,13 +1,15 @@
 import React from 'react'
-import {NavLink} from 'react-router-dom'
-const Navbar=()=>{
-    return(
+import { NavLink } from 'react-router-dom'
+const Navbar = () => {
+    return (
         <div>
             <div>
                 <div>
                     <NavLink to='/'>Home</NavLink>
                     <NavLink to='/Add'>Add Error</NavLink>
                     <NavLink to='/'>Search Error</NavLink>
+                    <NavLink to='/'>Yashwanth's Autograph</NavLink>
+
                 </div>
             </div>
 
